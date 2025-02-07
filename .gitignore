@@ -59,8 +59,7 @@ GeneratedFiles/
 # Ignore JetBrains Rider files
 .idea/
 
-# Ignore Windows Form Designer files (optional if generated dynamically)
-*.Designer.cs
+
 
 # Ignore Thumbs.db and other system files
 Thumbs.db
