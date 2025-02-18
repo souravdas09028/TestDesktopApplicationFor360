@@ -8,8 +8,8 @@ namespace TestDesktopApplicationFor360
 {
     public class Calculator
     {
-        private double val1;
-        private double val2;
+        protected double val1;
+        protected double val2;
 
         public void setVal1(double val)
         {
@@ -36,6 +36,9 @@ namespace TestDesktopApplicationFor360
         {
             return val1 * val2;
         }
+
+
+       
 
         public double divNum()
         {

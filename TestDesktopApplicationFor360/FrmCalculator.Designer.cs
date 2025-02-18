@@ -45,6 +45,8 @@
             btnSubt = new Button();
             btnMult = new Button();
             btnDiv = new Button();
+            btnRoot = new Button();
+            btnSq = new Button();
             SuspendLayout();
             // 
             // btnCalculate
@@ -218,11 +220,31 @@
             btnDiv.UseVisualStyleBackColor = true;
             btnDiv.Click += btnDiv_Click;
             // 
+            // btnRoot
+            // 
+            btnRoot.Location = new Point(301, 144);
+            btnRoot.Name = "btnRoot";
+            btnRoot.Size = new Size(50, 50);
+            btnRoot.TabIndex = 3;
+            btnRoot.Text = "√";
+            btnRoot.UseVisualStyleBackColor = true;
+            btnRoot.Click += btnRoot_Click;
+            // 
+            // btnSq
+            // 
+            btnSq.Location = new Point(301, 209);
+            btnSq.Name = "btnSq";
+            btnSq.Size = new Size(50, 50);
+            btnSq.TabIndex = 3;
+            btnSq.Text = "²";
+            btnSq.UseVisualStyleBackColor = true;
+            btnSq.Click += btnSq_Click;
+            // 
             // FrmCalculator
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(378, 501);
+            ClientSize = new Size(378, 356);
             Controls.Add(btn0);
             Controls.Add(btn9);
             Controls.Add(btn8);
@@ -233,6 +255,8 @@
             Controls.Add(btnMult);
             Controls.Add(btnSubt);
             Controls.Add(btnAdd);
+            Controls.Add(btnSq);
+            Controls.Add(btnRoot);
             Controls.Add(btnC);
             Controls.Add(btn4);
             Controls.Add(btn3);
@@ -268,6 +292,7 @@
         private Button btnSubt;
         private Button btnMult;
         private Button btnDiv;
-     
+        private Button btnRoot;
+        private Button btnSq;
     }
 }
