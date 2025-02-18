@@ -9,7 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TestDesktopApplicationFor360
+
+
+    
 {
+
     public partial class FrmCalculator : Form
     {
         public FrmCalculator()
@@ -17,14 +21,56 @@ namespace TestDesktopApplicationFor360
             InitializeComponent();
         }
 
+        public  String op;
+
+        public double result;
+
+
+        Calculator basicCal = new Calculator();
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            int val1 = Convert.ToInt32(txtVal1.Text);
-            int val2 = Convert.ToInt32(txtVal2.Text);
+            if(txtVal1.Text != "" && txtVal2.Text != "" && txtOperator.Text != "")
+            {
+                basicCal.setVal1(Convert.ToDouble(txtVal1.Text));
+                basicCal.setVal2(Convert.ToInt32(txtVal2.Text));
+                op = txtOperator.Text;
+                switch (op)
+                {
+                    case "+":
+                        result = basicCal.addNum();
+                        break;
+                    case "-":
+                        result = basicCal.subtNum();
+                        break;
+                    case "*":
+                        result = basicCal.multNum();
+                        break;
+                    case "/":
+                        result = basicCal.divNum();
+                        break;
 
-            int sum = val1 + val2 + 5;
+                    default:
+                        break;
+                }
+                
 
-            MessageBox.Show(sum.ToString(), "Result", MessageBoxButtons.OK);
+                MessageBox.Show(result.ToString(), "Result", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show( "Please input both numbers and operator");
+            }
+           
+        }
+
+        private void FrmCalculator_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
