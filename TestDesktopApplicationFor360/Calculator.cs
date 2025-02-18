@@ -39,7 +39,7 @@ namespace TestDesktopApplicationFor360
 
         public double divNum()
         {
-            if (val1 % val2 == 0)
+            if (val1 != 0 && val2 != 0)
             {
                 return val1 / val2;
             }
