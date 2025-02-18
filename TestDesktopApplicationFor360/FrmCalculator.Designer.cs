@@ -52,7 +52,7 @@
             // 
             // btnCalculate
             // 
-            btnCalculate.Location = new Point(97, 274);
+            btnCalculate.Location = new Point(29, 274);
             btnCalculate.Margin = new Padding(3, 4, 3, 4);
             btnCalculate.Name = "btnCalculate";
             btnCalculate.Size = new Size(117, 50);
@@ -163,7 +163,7 @@
             // 
             // btn0
             // 
-            btn0.Location = new Point(29, 274);
+            btn0.Location = new Point(164, 274);
             btn0.Name = "btn0";
             btn0.Size = new Size(50, 50);
             btn0.TabIndex = 3;
