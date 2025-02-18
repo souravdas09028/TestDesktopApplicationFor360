@@ -234,7 +234,7 @@ namespace TestDesktopApplicationFor360
 
         private void btn7_Click(object sender, EventArgs e)
         {
-         
+
             if (input1 == null || input1 == 0.0)
             {
                 setInput1("7");
@@ -292,7 +292,7 @@ namespace TestDesktopApplicationFor360
 
         private void btnRoot_Click(object sender, EventArgs e)
         {
-          
+
             if (txtVal.Text != null && txtVal.Text != "")
             {
                 input1 = Convert.ToInt32(txtVal.Text);
@@ -315,6 +315,22 @@ namespace TestDesktopApplicationFor360
                 input1 = Convert.ToInt32(txtVal.Text);
                 sciCal.setVal1(input1);
                 result = sciCal.squareNum();
+                txtVal.Text = result.ToString();
+
+                op = "";
+                totalInp = "";
+                secInput = "";
+                input1 = 0.0;
+            }
+        }
+
+        private void btnCb_Click(object sender, EventArgs e)
+        {
+            if (txtVal.Text != null && txtVal.Text != "")
+            {
+                input1 = Convert.ToInt32(txtVal.Text);
+                sciCal.setVal1(input1);
+                result = sciCal.cubeNum();
                 txtVal.Text = result.ToString();
 
                 op = "";

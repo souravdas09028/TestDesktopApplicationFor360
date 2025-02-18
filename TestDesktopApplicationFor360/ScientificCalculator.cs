@@ -21,5 +21,10 @@ namespace TestDesktopApplicationFor360
         {
             return Math.Pow(val1, 2);
         }
+
+        public double cubeNum()  
+        {
+            return Math.Pow(val1, 3);
+        }
     }
 }

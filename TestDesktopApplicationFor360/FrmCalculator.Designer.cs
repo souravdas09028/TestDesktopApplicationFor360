@@ -47,6 +47,7 @@
             btnDiv = new Button();
             btnRoot = new Button();
             btnSq = new Button();
+            btnCb = new Button();
             SuspendLayout();
             // 
             // btnCalculate
@@ -240,6 +241,16 @@
             btnSq.UseVisualStyleBackColor = true;
             btnSq.Click += btnSq_Click;
             // 
+            // btnCb
+            // 
+            btnCb.Location = new Point(301, 274);
+            btnCb.Name = "btnCb";
+            btnCb.Size = new Size(50, 50);
+            btnCb.TabIndex = 3;
+            btnCb.Text = "³";
+            btnCb.UseVisualStyleBackColor = true;
+            btnCb.Click += btnCb_Click;
+            // 
             // FrmCalculator
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -255,6 +266,7 @@
             Controls.Add(btnMult);
             Controls.Add(btnSubt);
             Controls.Add(btnAdd);
+            Controls.Add(btnCb);
             Controls.Add(btnSq);
             Controls.Add(btnRoot);
             Controls.Add(btnC);
@@ -294,5 +306,6 @@
         private Button btnDiv;
         private Button btnRoot;
         private Button btnSq;
+        private Button btnCb;
     }
 }
