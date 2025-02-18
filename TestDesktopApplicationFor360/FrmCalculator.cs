@@ -18,105 +18,158 @@ namespace TestDesktopApplicationFor360
         public FrmCalculator()
         {
             InitializeComponent();
-            txtVal1.Text = "0";
-            txtVal2.Text = "0";
-            resultBox.Text = "0";
+            numBox.Text = "0";
 
         }
 
-        private void btnAddition_Click(object sender, EventArgs e)
+        double num1 = 0;
+        double num2 = 0;
+        double result = 0;
+        List<string> history = new List<string>();
+
+
+        private class Calculator
         {
+            public double number;
+            public string oprtr;
 
-            resultBox.Text = Calculation("add").ToString();
-
-        }
-
-
-
-        private void btnSubtract_Click(object sender, EventArgs e)
-        {
-            resultBox.Text = Calculation("subtract").ToString();
-
-        }
-
-        private void btnMulti_Click(object sender, EventArgs e)
-        {
-            resultBox.Text = Calculation("multiply").ToString();
-
-        }
-
-        private void btnDivision_Click(object sender, EventArgs e)
-        {
-            resultBox.Text = Calculation("divide").ToString();
-
-        }
-
-        private double Calculation(string oparation)
-        {
-            double result = 0;
-            try
+            public double Calculation(double nmbr1, double nmbr2, string sign)
             {
 
-                double num1 = Convert.ToDouble(txtVal1.Text);
-                double num2 = Convert.ToDouble(txtVal2.Text);
-
-                switch (oparation)
+                switch (sign)
                 {
-                    case "add":
-                        result = num1 + num2;
-                        break;
-                    case "subtract":
-                        result = num1 - num2;
-                        break;
-                    case "multiply":
-                        result = num1 * num2;
-                        break;
-                    case "divide":
-                        result = num1 / num2;
-                        if (num2 != 0)
-                        {
-                            result = num1 / num2;
-                        }
-                        else
-                        {
+                    case "+":
+                        return nmbr1 + nmbr2;
+                    case "-":
+                        return nmbr1 - nmbr2;
+                    case "*":
+                        return nmbr1 * nmbr2;
+                    case "/":
+                        if (nmbr2 == 0)
                             MessageBox.Show("can not divide by zero");
-                            return 0;
-
-                        }
-                        break;
-                    default:
-                        {
-                            MessageBox.Show("error");
-                            return 0;
-                        }
+                        return nmbr1 / nmbr2;
+                    default: return 0;
                 }
 
+
+            }
+
+        }
+
+        Calculator calculator = new Calculator();
+
+
+        private void numBox_Click(object sender, EventArgs e)
+        {
+            numBox.Text = "";
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            GetNum1();
+            calculator.oprtr = "+";
+        }
+
+
+        private void btnCalculation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                calculator.number = Convert.ToDouble(numBox.Text);
+                num2 = calculator.number;
+                result = calculator.Calculation(num1, num2, calculator.oprtr);
+                resultBox.Text = result.ToString();
+
+                string entry = $"{num1} {calculator.oprtr} {num2} = {result}";
+                history.Add(entry);
             }
             catch (FormatException)
             {
                 MessageBox.Show("Please enter valid numeric values.");
             }
-            //catch (DivideByZeroException) {
-            //    MessageBox.Show("can not divide by zero");
-            //}
-            return result;
-        }
 
-        private void txtVal1_Click(object sender, EventArgs e)
-        {
-            txtVal1.Clear();
-        }
-
-        private void txtVal2_Click(object sender, EventArgs e)
-        {
-            txtVal2.Clear();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtVal1.Text = "0";
-            txtVal2.Text = "0";
-            resultBox.Text= "0";
+            num1 = 0;
+            num2 = 0;
+            result = 0;
+            numBox.Text = "0";
+            resultBox.Text = "0";
+            calculator.number = 0;
+            history.Clear();
+        }
+
+        private void btnSubtract_Click(object sender, EventArgs e)
+        {
+            GetNum1();
+            calculator.oprtr = "-";
+        }
+
+        private void btnMulti_Click(object sender, EventArgs e)
+        {
+            GetNum1();
+            calculator.oprtr = "*";
+        }
+
+        private void btnDivision_Click(object sender, EventArgs e)
+        {
+            GetNum1();
+            calculator.oprtr = "/";
+        }
+
+        private void GetNum1()
+        {
+            try
+            {
+                calculator.number = Convert.ToDouble(numBox.Text);
+                num1 = calculator.number;
+                calculator.number = 0;
+                numBox.Text = "0";
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter valid numeric values.");
+            }
+
+        }
+
+        private class ScntfcCalculator : Calculator
+        {
+            public double SqrRoot(double nmbr)
+            {
+                if (nmbr <= 0)
+                    MessageBox.Show("enter valid numeric number greater than zero");
+                return Math.Sqrt(nmbr);
+            }
+        }
+
+        ScntfcCalculator scntfcCalculator = new ScntfcCalculator();
+
+        private void btnSqrRoot_Click(object sender, EventArgs e)
+        {
+            scntfcCalculator.number = Convert.ToDouble(numBox.Text);
+            num1 = scntfcCalculator.number;
+            scntfcCalculator.oprtr = "√";
+            result = scntfcCalculator.SqrRoot(num1);
+            resultBox.Text = result.ToString();
+
+            string entry = $"{scntfcCalculator.oprtr} {num1} = {result}";
+            history.Add(entry);
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            if (history.Count == 0)
+            {
+                MessageBox.Show("No history available.", "History", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                string historyText = string.Join("\n", history);
+                MessageBox.Show(historyText, "Calculation History", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

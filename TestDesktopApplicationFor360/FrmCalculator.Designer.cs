@@ -28,152 +28,168 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnCalculate = new Button();
-            label1 = new Label();
-            txtVal1 = new TextBox();
-            txtVal2 = new TextBox();
-            label2 = new Label();
-            btnDivision = new Button();
+            labelEnterNum = new Label();
+            numBox = new TextBox();
+            btnAdd = new Button();
             btnSubtract = new Button();
             btnMulti = new Button();
-            label3 = new Label();
-            label4 = new Label();
-            resultBox = new TextBox();
+            btnDivision = new Button();
             btnClear = new Button();
+            btnCalculation = new Button();
+            label1 = new Label();
+            resultBox = new TextBox();
+            label2 = new Label();
+            btnHistory = new Button();
+            btnSqrRoot = new Button();
             SuspendLayout();
             // 
-            // btnCalculate
+            // labelEnterNum
             // 
-            btnCalculate.Location = new Point(52, 179);
-            btnCalculate.Name = "btnCalculate";
-            btnCalculate.Size = new Size(75, 23);
-            btnCalculate.TabIndex = 0;
-            btnCalculate.Text = "Addition";
-            btnCalculate.UseVisualStyleBackColor = true;
-            btnCalculate.Click += btnAddition_Click;
+            labelEnterNum.AutoSize = true;
+            labelEnterNum.Location = new Point(3, 18);
+            labelEnterNum.Name = "labelEnterNum";
+            labelEnterNum.Size = new Size(81, 15);
+            labelEnterNum.TabIndex = 0;
+            labelEnterNum.Text = "Enter Number";
             // 
-            // label1
+            // numBox
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(83, 53);
-            label1.Name = "label1";
-            label1.Size = new Size(149, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Please Input First Number :";
+            numBox.Location = new Point(83, 15);
+            numBox.Name = "numBox";
+            numBox.Size = new Size(142, 23);
+            numBox.TabIndex = 1;
+            numBox.Click += numBox_Click;
             // 
-            // txtVal1
+            // btnAdd
             // 
-            txtVal1.Location = new Point(253, 43);
-            txtVal1.Name = "txtVal1";
-            txtVal1.Size = new Size(100, 23);
-            txtVal1.TabIndex = 2;
-            txtVal1.Click += txtVal1_Click;
-            // 
-            // txtVal2
-            // 
-            txtVal2.Location = new Point(253, 103);
-            txtVal2.Name = "txtVal2";
-            txtVal2.Size = new Size(100, 23);
-            txtVal2.TabIndex = 3;
-            txtVal2.Click += txtVal2_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(83, 106);
-            label2.Name = "label2";
-            label2.Size = new Size(166, 15);
-            label2.TabIndex = 4;
-            label2.Text = "Please Input Second Number :";
-            // 
-            // btnDivision
-            // 
-            btnDivision.Location = new Point(365, 179);
-            btnDivision.Name = "btnDivision";
-            btnDivision.Size = new Size(75, 23);
-            btnDivision.TabIndex = 5;
-            btnDivision.Text = "Division";
-            btnDivision.UseVisualStyleBackColor = true;
-            btnDivision.Click += btnDivision_Click;
+            btnAdd.Font = new Font("Segoe UI", 10F);
+            btnAdd.Location = new Point(74, 48);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(26, 23);
+            btnAdd.TabIndex = 2;
+            btnAdd.Text = "+";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnSubtract
             // 
-            btnSubtract.Location = new Point(146, 179);
+            btnSubtract.Font = new Font("Segoe UI", 10F);
+            btnSubtract.Location = new Point(106, 47);
             btnSubtract.Name = "btnSubtract";
-            btnSubtract.Size = new Size(90, 23);
-            btnSubtract.TabIndex = 5;
-            btnSubtract.Text = "Subtraction";
+            btnSubtract.Size = new Size(26, 23);
+            btnSubtract.TabIndex = 2;
+            btnSubtract.Text = "-";
             btnSubtract.UseVisualStyleBackColor = true;
             btnSubtract.Click += btnSubtract_Click;
             // 
             // btnMulti
             // 
-            btnMulti.Location = new Point(253, 179);
+            btnMulti.Font = new Font("Segoe UI", 10F);
+            btnMulti.Location = new Point(138, 47);
             btnMulti.Name = "btnMulti";
-            btnMulti.Size = new Size(100, 23);
-            btnMulti.TabIndex = 5;
-            btnMulti.Text = "Multiplication";
+            btnMulti.Size = new Size(26, 23);
+            btnMulti.TabIndex = 2;
+            btnMulti.Text = "*";
             btnMulti.UseVisualStyleBackColor = true;
             btnMulti.Click += btnMulti_Click;
             // 
-            // label3
+            // btnDivision
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(146, 148);
-            label3.Name = "label3";
-            label3.Size = new Size(130, 15);
-            label3.TabIndex = 1;
-            label3.Text = "Choose your Operation";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 14F);
-            label4.Location = new Point(97, 212);
-            label4.Name = "label4";
-            label4.Size = new Size(62, 25);
-            label4.TabIndex = 1;
-            label4.Text = "Result";
-            // 
-            // resultBox
-            // 
-            resultBox.BackColor = SystemColors.Control;
-            resultBox.BorderStyle = BorderStyle.FixedSingle;
-            resultBox.Enabled = false;
-            resultBox.Font = new Font("Segoe UI", 12F);
-            resultBox.Location = new Point(194, 212);
-            resultBox.Name = "resultBox";
-            resultBox.ReadOnly = true;
-            resultBox.Size = new Size(100, 29);
-            resultBox.TabIndex = 3;
+            btnDivision.Font = new Font("Segoe UI", 10F);
+            btnDivision.Location = new Point(170, 47);
+            btnDivision.Name = "btnDivision";
+            btnDivision.Size = new Size(26, 23);
+            btnDivision.TabIndex = 2;
+            btnDivision.Text = "/";
+            btnDivision.UseVisualStyleBackColor = true;
+            btnDivision.Click += btnDivision_Click;
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(325, 214);
+            btnClear.Location = new Point(231, 15);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(88, 25);
-            btnClear.TabIndex = 6;
-            btnClear.Text = "Clear";
+            btnClear.Size = new Size(26, 23);
+            btnClear.TabIndex = 3;
+            btnClear.Text = "C";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
+            // 
+            // btnCalculation
+            // 
+            btnCalculation.Location = new Point(231, 48);
+            btnCalculation.Name = "btnCalculation";
+            btnCalculation.Size = new Size(26, 23);
+            btnCalculation.TabIndex = 4;
+            btnCalculation.Text = "=";
+            btnCalculation.UseVisualStyleBackColor = true;
+            btnCalculation.Click += btnCalculation_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 83);
+            label1.Name = "label1";
+            label1.Size = new Size(39, 15);
+            label1.TabIndex = 5;
+            label1.Text = "Result";
+            // 
+            // resultBox
+            // 
+            resultBox.BackColor = SystemColors.ScrollBar;
+            resultBox.BorderStyle = BorderStyle.FixedSingle;
+            resultBox.Enabled = false;
+            resultBox.Location = new Point(74, 83);
+            resultBox.Name = "resultBox";
+            resultBox.Size = new Size(151, 23);
+            resultBox.TabIndex = 6;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(3, 52);
+            label2.Name = "label2";
+            label2.Size = new Size(54, 15);
+            label2.TabIndex = 7;
+            label2.Text = "Operator";
+            // 
+            // btnHistory
+            // 
+            btnHistory.Location = new Point(231, 83);
+            btnHistory.Name = "btnHistory";
+            btnHistory.Size = new Size(26, 23);
+            btnHistory.TabIndex = 8;
+            btnHistory.Text = "H";
+            btnHistory.UseVisualStyleBackColor = true;
+            btnHistory.Click += btnHistory_Click;
+            // 
+            // btnSqrRoot
+            // 
+            btnSqrRoot.Location = new Point(202, 47);
+            btnSqrRoot.Name = "btnSqrRoot";
+            btnSqrRoot.Size = new Size(26, 23);
+            btnSqrRoot.TabIndex = 9;
+            btnSqrRoot.Text = "√";
+            btnSqrRoot.UseVisualStyleBackColor = true;
+            btnSqrRoot.Click += btnSqrRoot_Click;
             // 
             // FrmCalculator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(485, 272);
-            Controls.Add(btnClear);
-            Controls.Add(btnMulti);
-            Controls.Add(btnSubtract);
-            Controls.Add(btnDivision);
+            ClientSize = new Size(266, 123);
+            Controls.Add(btnSqrRoot);
+            Controls.Add(btnHistory);
             Controls.Add(label2);
             Controls.Add(resultBox);
-            Controls.Add(txtVal2);
-            Controls.Add(txtVal1);
-            Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(label1);
-            Controls.Add(btnCalculate);
+            Controls.Add(btnCalculation);
+            Controls.Add(btnClear);
+            Controls.Add(btnDivision);
+            Controls.Add(btnMulti);
+            Controls.Add(btnSubtract);
+            Controls.Add(btnAdd);
+            Controls.Add(numBox);
+            Controls.Add(labelEnterNum);
             Name = "FrmCalculator";
             Text = "Calculator";
             ResumeLayout(false);
@@ -182,17 +198,18 @@
 
         #endregion
 
-        private Button btnCalculate;
-        private Label label1;
-        private TextBox txtVal1;
-        private TextBox txtVal2;
-        private Label label2;
-        private Button btnDivision;
+        private Label labelEnterNum;
+        private TextBox numBox;
+        private Button btnAdd;
         private Button btnSubtract;
         private Button btnMulti;
-        private Label label3;
-        private Label label4;
-        private TextBox resultBox;
+        private Button btnDivision;
         private Button btnClear;
+        private Button btnCalculation;
+        private Label label1;
+        private TextBox resultBox;
+        private Label label2;
+        private Button btnHistory;
+        private Button btnSqrRoot;
     }
 }
