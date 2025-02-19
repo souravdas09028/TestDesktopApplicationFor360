@@ -21,10 +21,29 @@ namespace TestDesktopApplicationFor360
         {
             int val1 = Convert.ToInt32(txtVal1.Text);
             int val2 = Convert.ToInt32(txtVal2.Text);
+            var opt = txtVal3.Text;
+            double result = 0;
+            switch (opt)
+            {
+                case "+":
+                    result = val1 + val2;
+                    break;
+                case "-":
+                    result = val1 - val2;
+                    break;
+                case "*":
+                    result = val1 * val2;
+                    break;
+                case "/":
+                    result = val1 / val2;
+                    break;
+                default:
+                    MessageBox.Show("Invalid Operation", "Warning", MessageBoxButtons.OK);
+                    break;
 
-            int sum = val1 + val2 + 5;
+            }
 
-            MessageBox.Show(sum.ToString(), "Result", MessageBoxButtons.OK);
+            MessageBox.Show(result.ToString(), "Result", MessageBoxButtons.OK);
         }
     }
 }

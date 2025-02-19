@@ -33,11 +33,13 @@
             txtVal1 = new TextBox();
             txtVal2 = new TextBox();
             label2 = new Label();
+            txtVal3 = new TextBox();
+            Label label3 = new Label();
             SuspendLayout();
             // 
             // btnCalculate
             // 
-            btnCalculate.Location = new Point(278, 147);
+            btnCalculate.Location = new Point(278, 217);
             btnCalculate.Name = "btnCalculate";
             btnCalculate.Size = new Size(75, 23);
             btnCalculate.TabIndex = 0;
@@ -73,19 +75,36 @@
             label2.AutoSize = true;
             label2.Location = new Point(83, 106);
             label2.Name = "label2";
-            label2.Size = new Size(166, 15);
+            label2.Size = new Size(149, 15);
             label2.TabIndex = 4;
             label2.Text = "Please Input Second Number :";
+            //
+            //txtval3
+            txtVal3.Location = new Point(253, 153);
+            txtVal3.Name = "txtVal3";
+            txtVal3.Size = new Size(100, 23);
+            txtVal3.TabIndex = 5;
+            // 
+            // label2
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(83, 156);
+            label3.Name = "label3";
+            label3.Size = new Size(166, 15);
+            label3.TabIndex = 6;
+            label3.Text = "Operation :";
             // 
             // FrmCalculator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(413, 198);
+            ClientSize = new Size(413, 300);
             Controls.Add(label2);
             Controls.Add(txtVal2);
             Controls.Add(txtVal1);
             Controls.Add(label1);
+            Controls.Add(txtVal3);
+            Controls.Add(label3);
             Controls.Add(btnCalculate);
             Name = "FrmCalculator";
             Text = "Calculator";
@@ -100,5 +119,6 @@
         private TextBox txtVal1;
         private TextBox txtVal2;
         private Label label2;
+        private TextBox txtVal3;
     }
 }
