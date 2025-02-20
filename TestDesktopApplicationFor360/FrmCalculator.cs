@@ -19,6 +19,16 @@ namespace TestDesktopApplicationFor360
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
             int val1 = Convert.ToInt32(txtVal1.Text);
             int val2 = Convert.ToInt32(txtVal2.Text);
 
