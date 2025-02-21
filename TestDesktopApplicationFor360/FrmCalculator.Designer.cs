@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             labelEnterNum = new Label();
-            numBox = new TextBox();
+            txtNumInput = new TextBox();
             btnAdd = new Button();
             btnSubtract = new Button();
             btnMulti = new Button();
@@ -52,13 +52,13 @@
             labelEnterNum.TabIndex = 0;
             labelEnterNum.Text = "Enter Number";
             // 
-            // numBox
+            // txtNumInput
             // 
-            numBox.Location = new Point(83, 15);
-            numBox.Name = "numBox";
-            numBox.Size = new Size(142, 23);
-            numBox.TabIndex = 1;
-            numBox.Click += numBox_Click;
+            txtNumInput.Location = new Point(83, 15);
+            txtNumInput.Name = "txtNumInput";
+            txtNumInput.Size = new Size(142, 23);
+            txtNumInput.TabIndex = 1;
+            txtNumInput.Click += txtNumInput_Click;
             // 
             // btnAdd
             // 
@@ -188,7 +188,7 @@
             Controls.Add(btnMulti);
             Controls.Add(btnSubtract);
             Controls.Add(btnAdd);
-            Controls.Add(numBox);
+            Controls.Add(txtNumInput);
             Controls.Add(labelEnterNum);
             Name = "FrmCalculator";
             Text = "Calculator";
@@ -199,7 +199,7 @@
         #endregion
 
         private Label labelEnterNum;
-        private TextBox numBox;
+        private TextBox txtNumInput;
         private Button btnAdd;
         private Button btnSubtract;
         private Button btnMulti;
